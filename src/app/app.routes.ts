@@ -1,28 +1,19 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
-import { HomeComponent } from './';
-import { Name2Component } from './';
-import { Name3Component } from './';
-import { Name4Component } from './';
-import { PageNotFoundComponent } from './';
+import { AboutComponent, 
+    PortafolioComponent, 
+    PortafolioItemComponent } from './components/index.paginas';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'path2', component: Name2Component },
-    { path: 'path3', component: Name3Component },
-    { path: 'path4', component: Name4Component },
-    { path: '**', component: PageNotFoundComponent },
+    { path: '', component: PortafolioComponent },
+    { path: 'about', component: AboutComponent},
+    { path: 'producto', component: PortafolioItemComponent },
+    { path: '**', pathMatch: 'full', redirectTo:'' },
 
-    //{ path: 'path/:routeParam', component: MyComponent },
-    //{ path: 'staticPath', component: ... },
-    //{ path: '**', component: ... },
-    //{ path: 'oldPath', redirectTo: '/staticPath' },
-    //{ path: ..., component: ..., data: { message: 'Custom' }
 ];
 
-@NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
-})
-export class FeatureRoutingModule {}
+
+//Se usa forRoot porque es la primera vez que se llama y viene con el servicio de router.
+//Si el servicio ya se ha llamado, se usa forChild, que contiene las rutas pero no el servicio.
+export const app_routing = RouterModule.forRoot(routes, { useHash:true});

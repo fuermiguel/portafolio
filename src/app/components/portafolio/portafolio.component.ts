@@ -1,4 +1,4 @@
-import { InformacionService } from '../../services/informacion.service';
+import { ProductosService } from '../../services/productos.service';
 import { Component } from '@angular/core';
 
 
@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class PortafolioComponent  {
 
   //Pasando el servicio por el constructor, ya lo tendremos disponible
-   constructor(public _is:InformacionService){
+   constructor(private _ps:ProductosService){
 
    }
 

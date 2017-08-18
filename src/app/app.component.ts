@@ -1,5 +1,7 @@
 import { InformacionService } from './services/informacion.service';
+import { ProductosService } from './services/productos.service';
 import { Component } from '@angular/core';
+
 
 
 @Component({
@@ -9,7 +11,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor(public _is:InformacionService ){
+  constructor(public _is:InformacionService,
+              public _ps:ProductosService ){
 
   }
    

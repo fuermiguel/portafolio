@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class PortafolioComponent  {
 
   //Pasando el servicio por el constructor, ya lo tendremos disponible
-   constructor(private _ps:ProductosService){
+   constructor(public _ps:ProductosService){
 
    }
 
